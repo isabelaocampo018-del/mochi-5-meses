@@ -1,0 +1,409 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Quicksand:wght@400;500;600;700&family=Sacramento&display=swap');
+
+:root {
+    --fondo: #100d19;
+    --morado: #a78bfa;
+    --rosa: #f6bfd7;
+    --blanco: #fff9ff;
+    --gris: #c8c0d5;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: 'Quicksand', sans-serif;
+    color: var(--blanco);
+    background:
+        radial-gradient(ellipse at 15% 10%, #342047 0%, transparent 40%),
+        radial-gradient(ellipse at 85% 75%, #251b3d 0%, transparent 40%),
+        var(--fondo);
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "✦  ·  ☾  ·  ✧  ·  ♡  ·  ✦  ·  ☽";
+    position: fixed;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #d8bafa;
+    opacity: .4;
+    letter-spacing: 13px;
+    font-size: 17px;
+    pointer-events: none;
+}
+
+.container {
+    width: min(92%, 760px);
+    margin: auto;
+    padding: 65px 0 35px;
+    text-align: center;
+}
+
+.label {
+    display: inline-block;
+    color: var(--rosa);
+    border: 1px solid #a78bfa66;
+    background: #241a35aa;
+    border-radius: 50px;
+    padding: 8px 17px;
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: 'Creepster', cursive;
+    font-weight: 400;
+    font-size: clamp(43px, 9vw, 75px);
+    line-height: 1.12;
+    letter-spacing: 2px;
+    margin: 22px 0 4px;
+    color: #fffaff;
+    text-shadow: 0 0 18px #b99af966;
+}
+
+h1 span {
+    color: var(--rosa);
+}
+
+.nickname {
+    font-family: 'Sacramento', cursive;
+    font-size: 43px;
+    color: var(--rosa);
+    margin: 0;
+}
+
+.subtitle {
+    color: var(--gris);
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 440px;
+    margin: 15px auto 27px;
+}
+
+.moon {
+    font-size: 37px;
+    margin: 8px 0 15px;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 12px #c5a1ff66);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+.heart {
+    color: var(--rosa);
+    display: inline-block;
+    animation: heartbeat 1.7s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.16); }
+}
+
+.divider {
+    color: #a78bfa99;
+    letter-spacing: 9px;
+    margin: 25px 0;
+}
+
+.intro-card {
+    max-width: 520px;
+    margin: 0 auto 30px;
+    padding: 20px;
+    border: 1px solid #a78bfa44;
+    background: #ffffff08;
+    border-radius: 18px;
+    color: #e6ddec;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.intro-card strong {
+    color: var(--rosa);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+    margin: 25px 0 20px;
+}
+
+.surprise {
+    min-height: 142px;
+    border: 1px solid #a78bfa55;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #282039, #191422);
+    color: var(--blanco);
+    padding: 20px 10px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: transform .25s, border-color .25s,
+                box-shadow .25s, background .25s;
+}
+
+.surprise:hover {
+    transform: translateY(-5px);
+    border-color: var(--rosa);
+    box-shadow: 0 8px 30px #b69aff1c;
+    background: linear-gradient(145deg, #352442, #21172e);
+}
+
+.emoji {
+    display: block;
+    font-size: 31px;
+    margin-bottom: 13px;
+}
+
+.surprise strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 7px;
+}
+
+.surprise small {
+    color: #bfb3cc;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.hint {
+    font-size: 11px;
+    color: #9f93ad;
+    letter-spacing: .4px;
+}
+
+footer {
+    color: #9f93ad;
+    font-size: 11px;
+    margin-top: 40px;
+    line-height: 2;
+}
+
+/* Ventanas emergentes */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    padding: 18px;
+    overflow-y: auto;
+    background: #090711ef;
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+    animation: appear .25s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    position: relative;
+    width: min(100%, 570px);
+    max-height: 90vh;
+    overflow-y: auto;
+    border: 1px solid #b99af966;
+    border-radius: 20px;
+    padding: 32px 25px;
+    background:
+        radial-gradient(ellipse at top, #342343, transparent 70%),
+        #17121f;
+    box-shadow: 0 0 55px #8d68c822;
+    animation: rise .3s ease;
+}
+
+@keyframes rise {
+    from { transform: translateY(12px); }
+    to { transform: translateY(0); }
+}
+
+.close {
+    position: absolute;
+    right: 14px;
+    top: 12px;
+    border: 1px solid #ffffff20;
+    background: #ffffff0c;
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+.close:hover {
+    background: #ffffff20;
+}
+
+.modal h2 {
+    font-family: 'Creepster', cursive;
+    font-size: 35px;
+    font-weight: 400;
+    color: var(--rosa);
+    margin: 5px 25px 22px;
+    letter-spacing: 1px;
+}
+
+.letter {
+    text-align: left;
+    font-size: 14px;
+    line-height: 2;
+    color: #eee5f2;
+}
+
+.letter p {
+    margin: 0 0 17px;
+}
+
+.signature {
+    font-family: 'Sacramento', cursive;
+    font-size: 35px;
+    color: var(--rosa);
+    text-align: right;
+    margin-top: 18px;
+}
+
+.drawing {
+    display: block;
+    width: 100%;
+    max-height: 65vh;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 9px;
+    background: #f6f0e9;
+    padding: 7px;
+}
+
+.caption {
+    color: #c8bbd4;
+    font-size: 12px;
+    line-height: 1.8;
+    margin: 18px auto 0;
+}
+
+.pink {
+    color: var(--rosa);
+}
+
+.song-icon {
+    font-size: 56px;
+    margin: 10px 0;
+}
+
+.song-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.song-artist {
+    font-size: 13px;
+    color: #c3b3d9;
+}
+
+.song-note {
+    text-align: left;
+    font-size: 14px;
+    line-height: 2;
+    color: #eee5f2;
+    margin: 25px 0;
+}
+
+.song-dedication {
+    text-align: center;
+    color: var(--rosa);
+}
+
+.listen {
+    display: inline-block;
+    text-decoration: none;
+    color: #17111f;
+    background: linear-gradient(100deg, #f5bfd7, #c9aaff);
+    padding: 13px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform .2s;
+}
+
+.listen:hover {
+    transform: scale(1.04);
+}
+
+.stars {
+    color: #d6b8ff;
+    opacity: .8;
+    letter-spacing: 8px;
+    margin: 15px 0;
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 520px) {
+    .container {
+        padding-top: 58px;
+    }
+
+    .buttons {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .surprise {
+        min-height: auto;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        gap: 15px;
+        padding: 15px 18px;
+    }
+
+    .emoji {
+        margin: 0;
+        min-width: 40px;
+        text-align: center;
+    }
+
+    .button-text {
+        flex: 1;
+    }
+
+    .modal-content {
+        padding: 30px 20px;
+    }
+
+    .modal h2 {
+        font-size: 30px;
+    }
+
+    .letter {
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

@@ -1,0 +1,264 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Felices 5 meses, Mochi 🖤</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="container">
+
+    <div class="label">☾ UNA PEQUEÑA SORPRESA PARA TI ☽</div>
+    <div class="moon">🌙</div>
+
+    <h1>Felices <span>5 meses</span></h1>
+    <p class="nickname">Mochi ♡</p>
+
+    <p class="subtitle">
+        En una noche de Halloween, entre lunas, calabazas y estrellas,
+        guardé un pedacito de mi corazón para ti.
+    </p>
+
+    <div class="divider">✦ ── ♡ ── ✦</div>
+
+    <section class="intro-card">
+        <strong>Bienvenido a nuestro pequeño mundo.</strong><br>
+        Preparé estas tres cositas con mucho amor.
+        Cada una guarda un recuerdo, un sentimiento
+        y un pedacito de lo que significás para mí.
+        <br>Elige una, mi amor :3. 🖤
+    </section>
+
+    <section class="buttons">
+
+        <button class="surprise" onclick="openModal('carta')">
+            <span class="emoji">💌</span>
+            <span class="button-text">
+                <strong>Una cartita</strong>
+                <small>Palabras que vienen del corazón</small>
+            </span>
+        </button>
+
+        <button class="surprise" onclick="openModal('dibujo')">
+            <span class="emoji">🖼️</span>
+            <span class="button-text">
+                <strong>Nuestro dibujito</strong>
+                <small>Un recuerdo hecho a mano</small>
+            </span>
+        </button>
+
+        <button class="surprise" onclick="openModal('cancion')">
+            <span class="emoji">🦋</span>
+            <span class="button-text">
+                <strong>Nuestra canción</strong>
+                <small>Una canción que me hace pensar en ti</small>
+            </span>
+        </button>
+
+    </section>
+
+    <p class="hint">✧ Hecho con amor, especialmente para mi Mochi ✧</p>
+
+    <div class="divider">☽ ── ♡ ── ☾</div>
+
+    <footer>
+        Siempre voy a guardar con cariño lo que vivimos.
+        <p><span class="heart">♥</span> Para Mochi</p>
+    </footer>
+
+</main>
+
+
+<!-- PRIMER BOTÓN: LA CARTA -->
+
+<div class="modal" id="carta" onclick="outsideClose(event, 'carta')">
+    <section class="modal-content">
+        <button class="close" onclick="closeModal('carta')"
+                aria-label="Cerrar">×</button>
+
+        <div class="stars">✦ ♡ ✦</div>
+        <h2>Para mi querido Mochi</h2>
+
+        <article class="letter">
+
+            <p>Mi Mochi, 🖤</p>
+
+            <p>
+                ¡Felices 5 meses! No podía dejar pasar este día
+                sin escribirte unas palabritas y hacerte algo
+                que tuviera un pedacito de mí.
+            </p>
+
+            <p>
+                Quiero que sepas que te amo muchísimo.
+                Me hace feliz recordar nuestras videollamadas,
+                nuestras conversaciones, las risas y todas esas
+                cositas pequeñas que, cuando vienen de ti,
+                terminan significando tanto para mí.
+            </p>
+
+            <p>
+                A veces pienso en cómo una persona puede llegar
+                a formar parte de tantos momentos de nuestros días.
+                De repente una canción, una palabra o una tontería
+                me hace pensar en ti, y ahí estás, en algún rinconcito
+                de mi corazón.
+            </p>
+
+            <p>
+                Por eso quise hacerte esta página con  temática
+                de este mes, con nuestro dibujito y con una canción
+                que quería dedicarte. Quería que tuvieras algo especial,
+                algo que pudieras abrir y que te recordara cuánto
+                cariño hay detrás de cada detalle.
+            </p>
+
+            <p>
+                No sé cómo se escribirían las historias de Jack y Sally
+                si pudieran contar cada uno de sus sentimientos,
+                pero sí sé que yo quería escribirte la mía.
+                Una en la que pudiera decirte
+                que te amo y que lo que compartimos ha sido
+                importante para mí.
+            </p>
+
+            <p>
+                Gracias por los momentos bonitos, por las risas,
+                por las conversaciones y por todos esos recuerdos
+                que ahora forman parte de mi historia.
+                Los voy a guardar con mucho cariño.
+            </p>
+
+            <p>
+                Hoy quería celebrar estos cinco meses y recordarte
+                algo muy sencillo: lo que siento por ti es sincero.
+                No necesitaba un regalo enorme ni algo perfecto;
+                solamente quería hacerte sonreír un poquito
+                y regalarte algo hecho con mis propias manos
+                y con todo mi corazón.
+            </p>
+
+            <p>
+                Ojalá, al ver esta página, puedas sentir un poquito
+                de todo el amor con el que la preparé.
+                Porque detrás de cada palabra, cada botón y cada
+                pequeño detalle, estás tu.
+            </p>
+
+            <p>
+                Felices 5 meses, mi Mochi.
+                Te amo muchísimo, muchísimo. 🦋
+            </p>
+
+            <p>Con todo mi cariño,</p>
+            <div class="signature">Isabelita ♡</div>
+
+        </article>
+
+        <div class="stars">☾ ✧ ♡ ✧ ☽</div>
+    </section>
+</div>
+
+
+<!-- SEGUNDO BOTÓN: EL DIBUJO -->
+
+<div class="modal" id="dibujo" onclick="outsideClose(event, 'dibujo')">
+    <section class="modal-content">
+        <button class="close" onclick="closeModal('dibujo')"
+                aria-label="Cerrar">×</button>
+
+        <div class="stars">♡ ✦ ♡</div>
+        <h2>Un dibujito para ti</h2>
+
+        <img
+            class="drawing"
+            src="dibujojack.png"
+            alt="Dibujo hecho a mano de Jack y Sally dentro de un corazón"
+        >
+
+        <p class="caption">
+            Jack, Sally y un corazoncito. 🖤<br>
+            Lo dibujé pensando en ti, y quería que también
+            tuviera un lugarcito en esta página.<br>
+            <span class="pink">Un detalle hecho con amor, para mi Mochi.</span>
+        </p>
+
+        <div class="stars">✧ ☾ ✧</div>
+    </section>
+</div>
+
+
+<!-- TERCER BOTÓN: LA CANCIÓN -->
+
+<div class="modal" id="cancion" onclick="outsideClose(event, 'cancion')">
+    <section class="modal-content">
+        <button class="close" onclick="closeModal('cancion')"
+                aria-label="Cerrar">×</button>
+
+        <div class="stars">✧ 🦋 ✧</div>
+        <h2>Una canción para ti</h2>
+
+        <div class="song-icon">🦋</div>
+        <div class="song-title">Butterfly</div>
+        <div class="song-artist">BTS · 방탄소년단</div>
+
+        <div class="divider">── ♡ ──</div>
+
+        <article class="song-note">
+
+            <p>
+                Elegí <em>Butterfly</em> porque me transmite esa
+                sensación de encontrar algo tan bonito y especial
+                que uno quisiera atesorarlo con muchísimo cuidado.
+            </p>
+
+            <p>
+                La canción me hace pensar en lo delicados que pueden
+                ser los sentimientos y en ese miedo de que algo hermoso
+                se escape de nuestras manos. Para mí tiene algo
+                muy dulce y melancólico, como esos momentos que
+                uno quisiera guardar para siempre en el corazón.
+            </p>
+
+            <p>
+                Por eso quería dedicártela. Porque me hace
+                pensar en lo que siento por ti y en lo mucho que
+                significan para mí los recuerdos que compartimos.
+            </p>
+
+            <p>
+                De hecho, ya te la había puesto en Spotify,
+                pero creo que todavía no la habías visto.
+                Así que quise dejarla también acá, en nuestro
+                pequeño rincón. ♡
+            </p>
+
+            <p class="song-dedication">
+                Ojalá la escuches y te acuerdes un poquito de mí.
+            </p>
+
+        </article>
+
+        <a class="listen"
+           href="https://www.youtube.com/watch?v=QI38JgvQva4&amp;list=RDQI38JgvQva4&amp;start_radio=1"
+           target="_blank"
+           rel="noopener noreferrer">
+            ▶ Escuchar Butterfly
+        </a>
+
+        <p class="caption">
+            Dale play y disfrutala. 🦋
+        </p>
+
+        <div class="stars">✧ ♡ ✧</div>
+    </section>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
